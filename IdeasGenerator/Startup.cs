@@ -26,7 +26,7 @@ namespace IdeasGenerator
             services.AddDbContext<ApiContext>(options =>
             options.UseSqlServer(
                     @"Server=.;Database=IdeaGenerator;Trusted_Connection=True;Integrated Security=True;",
-                    b => b.MigrationsAssembly(typeof(ApiContext).Assembly.FullName)));
+                    b => b.MigrationsAssembly("IdeasGenerator")));
 
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                 .AddJwtBearer(options =>
